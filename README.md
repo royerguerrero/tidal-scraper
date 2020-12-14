@@ -18,4 +18,5 @@ If you have another version of google chrome or a different operating system you
 - [ ] Envs get credentials
 - [ ] Login Logic
 - [ ] Get playlist songs by singers
-- [ ] 
+- [ ] Export in JSON
+- [ ] Export in CSV
