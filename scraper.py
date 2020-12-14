@@ -1,15 +1,18 @@
 from selenium import webdriver
 from getpass import getpass
-import sys
+import os, sys
 
 
 def get_credentials():
-    if sys.argv[1] == '--envs-auth':
-        print('[!] You are use environment varibales for auth credentials.')
-    
-    print('[Tip] You can pass the --envs-auth to user environment variable for authentication.')
-    username = input('What is your usermail/email? ')
-    password = getpass(prompt='What is your password? ')
+    try:
+        if sys.argv[1] == '--envs-auth':
+            print('[!] You are use environment varibales for auth credentials.')
+
+    except:
+        print('[Tip] You can pass the --envs-auth to user environment variable for authentication.')
+        username = input('What is your usermail/email? ')
+        password = getpass(prompt='What is your password? ')
+        
     return (username, password)
 
 def login(driver, credentials):
@@ -37,7 +40,8 @@ if __name__ == '__main__':
         /_  __/  _/ _ \/ _ | / /    ____  / _ \/ /__ ___ __  / /  (_)__ / /_
          / / _/ // // / __ |/ /__  /___/ / ___/ / _ `/ // / / /__/ (_-</ __/
         /_/ /___/____/_/ |_/____/       /_/  /_/\_,_/\_, / /____/_/___/\__/ 
-                                            /___/                   
+                                                    /___/   
+                                                                    
                 Web scraper to export to CSV or JSON yout tidal playlist 
           """)
     credentials = get_credentials()
